@@ -13,5 +13,6 @@ fn read_day(index: i32) -> String {
 pub mod days;
 
 fn main() {
-    println!("{}", days::day0::part1(read_day(0)));
+    // println!("{}", days::day0::part1(read_day(0)));
+    println!("{}", days::day1::part1(read_day(1)));
 }
