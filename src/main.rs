@@ -1,5 +1,17 @@
+use std::fs::File;
+use std::io::prelude::*;
+use std::path::Path;
+
+fn read_day(index: i32) -> String {
+    let path1 = format!("./input/day{}.dat", index);
+    let path = Path::new(&path1);
+    let mut file = File::open(path).expect("file not exists");
+    let mut s = String::new();
+    file.read_to_string(&mut s).expect("reading failed");
+    return s;
+}
 pub mod days;
 
 fn main() {
-    println!("{}", days::day0::get_hello());
+    println!("{}", days::day0::part1(read_day(0)));
 }

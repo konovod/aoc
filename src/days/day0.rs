@@ -1,4 +1,3 @@
-pub fn get_hello()-> String
-{
-    return "Hello, World".to_string();
+pub fn part1(input: String) -> String {
+    return input;
 }
