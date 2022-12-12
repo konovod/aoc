@@ -21,4 +21,5 @@ fn main() {
     println!("{}", days::day3::part1(read_day(3)));
     println!("{}", days::day3::part2(read_day(3)));
     println!("{}", days::day4::part1(read_day(4)));
+    println!("{}", days::day4::part2(read_day(4)));
 }

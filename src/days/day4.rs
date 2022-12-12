@@ -31,6 +31,17 @@ pub fn part1(input: String) -> usize {
         .count()
 }
 
+pub fn overlaps(first: &Range<i32>, second: &Range<i32>) -> bool {
+    !(first.start > second.end || first.end < second.start)
+}
+
+pub fn part2(input: String) -> usize {
+    parse(input)
+        .iter()
+        .filter(|(r1, r2)| overlaps(r1, r2))
+        .count()
+}
+
 // pub fn part2(input: String) -> i32 {
 //     return 0;
 // }
