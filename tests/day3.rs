@@ -20,7 +20,12 @@ fn test1_value() {
     assert_eq!(aoc::days::day3::part1(INPUT.to_string()), 157);
 }
 
-// #[test]
-// fn test2() {
-//     assert_eq!(aoc::days::day_template::part2("123".to_string()), 0);
-// }
+#[test]
+fn test2_parse() {
+    assert_eq!(aoc::days::day3::part2_parse(INPUT.to_string()), ['r', 'Z']);
+}
+
+#[test]
+fn test2_value() {
+    assert_eq!(aoc::days::day3::part2(INPUT.to_string()), 70);
+}
