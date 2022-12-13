@@ -1,6 +1,6 @@
 use lazy_static::lazy_static;
 use regex::Regex;
-use std::ops::{Range, RangeBounds};
+use std::ops::Range;
 
 type Pair = (Range<i32>, Range<i32>);
 
