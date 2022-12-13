@@ -1,7 +1,5 @@
 use aoc;
 
-const INPUT: &str = "123";
-
 #[test]
 fn test1() {
     assert_eq!(
@@ -26,7 +24,26 @@ fn test1() {
     );
 }
 
-// #[test]
-// fn test2() {
-//     assert_eq!(aoc::days::day_template::part2(INPUT.to_string()), 0);
-// }
+#[test]
+fn test2() {
+    assert_eq!(
+        aoc::days::day6::part2("mjqjpqmgbljsphdztnvjfqwrcgsmlb".to_string()),
+        19
+    );
+    assert_eq!(
+        aoc::days::day6::part2("bvwbjplbgvbhsrlpgdmjqwftvncz".to_string()),
+        23
+    );
+    assert_eq!(
+        aoc::days::day6::part2("nppdvjthqldpwncqszvftbrmjlhg".to_string()),
+        23
+    );
+    assert_eq!(
+        aoc::days::day6::part2("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg".to_string()),
+        29
+    );
+    assert_eq!(
+        aoc::days::day6::part2("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw".to_string()),
+        26
+    );
+}
