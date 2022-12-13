@@ -15,7 +15,7 @@ fn test1() {
     assert_eq!(aoc::days::day5::part1(INPUT.to_string()), "CMZ");
 }
 
-// #[test]
-// fn test2() {
-//     assert_eq!(aoc::days::day_template::part2(INPUT.to_string()), 0);
-// }
+#[test]
+fn test2() {
+    assert_eq!(aoc::days::day5::part2(INPUT.to_string()), "MCD");
+}

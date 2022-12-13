@@ -43,6 +43,29 @@ impl Instruction {
             ato.push(afrom.pop().unwrap());
         }
     }
+
+    pub fn execute2(&self, piles: &mut Vec<Pile>) {
+        if self.from == self.to {
+            return;
+        }
+
+        let tuple = if self.from < self.to {
+            let (head, tail) = piles.split_at_mut(self.from + 1);
+            (&mut head[self.from], &mut tail[self.to - self.from - 1])
+        } else {
+            let (head, tail) = piles.split_at_mut(self.to + 1);
+            (&mut tail[self.from - self.to - 1], &mut head[self.to])
+        };
+
+        let (afrom, ato) = tuple;
+
+        let remain_from = afrom.len() - self.count;
+        let mut iter = afrom.iter().skip(remain_from);
+        for _ in 0..self.count {
+            ato.push(*iter.next().unwrap());
+        }
+        afrom.truncate(remain_from);
+    }
 }
 
 impl fmt::Debug for Instruction {
@@ -102,6 +125,13 @@ pub fn part1(input: String) -> String {
         .collect::<String>();
 }
 
-pub fn part2(_input: String) -> i32 {
-    return 0;
+pub fn part2(input: String) -> String {
+    let (mut piles, instr) = parse(input);
+    for it in instr {
+        it.execute2(&mut piles);
+    }
+    return piles
+        .iter()
+        .map(|pile| pile.last().unwrap())
+        .collect::<String>();
 }
